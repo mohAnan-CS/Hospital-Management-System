@@ -22,17 +22,46 @@ public class DoctorService {
             int id = doctorsList.get(lastIndex).getDoctorID();
             id += 1 ;
             doctor.setDoctorID(id);
-            doctorsList.add(doctor);
-            return doctor;
 
         }else{
 
             doctor.setDoctorID(1);
-            doctorsList.add(doctor);
 
         }
 
+        doctorsList.add(doctor);
         return doctor;
+
+    }
+
+    public Doctor editDoctor(Integer id, Doctor doctor) {
+
+        for (Doctor value : doctorsList) {
+
+            if (value.getDoctorID() == id) {
+
+                if (doctor.getName() != null){
+                    value.setName(doctor.getName());
+                }
+
+                if (doctor.getSpecialization() != null){
+                    value.setSpecialization(doctor.getSpecialization());
+                }
+
+                if (doctor.getSalary() != null){
+                    value.setSalary(doctor.getSalary());
+                }
+
+                if (doctor.getPhoneNumber() != null){
+                    value.setPhoneNumber(doctor.getPhoneNumber());
+                }
+
+                return value;
+            }
+
+        }
+
+        return new Doctor(0, "?", "?", "?", 0.0, false);
 
     }
 }

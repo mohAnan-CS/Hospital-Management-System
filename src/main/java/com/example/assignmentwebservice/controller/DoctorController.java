@@ -22,5 +22,10 @@ public class DoctorController {
     @PostMapping()
     public Doctor createDoctor(@RequestBody Doctor doctor) { return  doctorService.addDoctor(doctor); }
 
+    @PutMapping("{id}")
+    public Doctor editDoctor(@PathVariable("id") Integer id,  @RequestBody Doctor doctor){
+        return doctorService.editDoctor(id, doctor);
+    }
+
 }
 

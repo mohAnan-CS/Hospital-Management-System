@@ -4,10 +4,10 @@ public class Doctor {
 
     private int doctorID;
     private String name, specialization, phoneNumber;
-    private double salary;
+    private Double salary;
     private boolean isAvailable;
 
-    public Doctor(int doctorID, String name, String specialization, String phoneNumber, double salary, boolean isAvailable) {
+    public Doctor(int doctorID, String name, String specialization, String phoneNumber, Double salary, boolean isAvailable) {
         this.doctorID = doctorID;
         this.name = name;
         this.specialization = specialization;
@@ -48,11 +48,11 @@ public class Doctor {
         this.phoneNumber = phoneNumber;
     }
 
-    public double getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 
