@@ -10,65 +10,58 @@ import java.util.Random;
 @Service
 public class InventoryService {
 
-    private List<Inventory> inventoryItems = new ArrayList<>();
+    private List<Inventory> inventoryList = new ArrayList<>();
 
-    // Method to get an inventory item by ID
-    public Inventory getInventoryById(int inventoryID) {
-        for (Inventory inventory : inventoryItems) {
-            if (inventory.getInventoryID() == inventoryID) {
-                return inventory;
-            }
-        }
-        return null;
+    public List<Inventory> getAllInventory() {
+        return inventoryList;
     }
 
-    // Method to create a new inventory item
-    public Inventory createInventory(Inventory inventory) {
-        // Generate a unique ID for the new inventory item (you can use a UUID or any other suitable method)
-        int newInventoryID = generateNewInventoryID();
-
-        // Set the generated ID for the inventory item
-        inventory.setInventoryID(newInventoryID);
-
-        // Add the inventory item to the list of inventory items
-        inventoryItems.add(inventory);
-
+    public Inventory addInventory(Inventory inventory) {
+        if (!inventoryList.isEmpty()) {
+            int lastIndex = inventoryList.size() - 1;
+            int id = inventoryList.get(lastIndex).getInventoryID();
+            id += 1;
+            inventory.setInventoryID(id);
+            inventoryList.add(inventory);
+            return inventory;
+        } else {
+            inventory.setInventoryID(1);
+            inventoryList.add(inventory);
+        }
         return inventory;
     }
 
-    // Method to update an inventory item
-    public Inventory updateInventory(Inventory updatedInventory) {
-        int inventoryID = updatedInventory.getInventoryID();
-
-        // Find the inventory item with the specified ID
-        Inventory inventoryToUpdate = getInventoryById(inventoryID);
-
-        if (inventoryToUpdate != null) {
-            // Update the inventory item's information
-            inventoryToUpdate.setItemName(updatedInventory.getItemName());
-            inventoryToUpdate.setQuantity(updatedInventory.getQuantity());
-            inventoryToUpdate.setUnit(updatedInventory.getUnit());
-            inventoryToUpdate.setReorderLevel(updatedInventory.getReorderLevel());
-
-            return inventoryToUpdate;
+    public Inventory deleteInventory(int id) {
+        Inventory deletedInventory = new Inventory(0, "", 0, "", 0);
+        for (int i = 0; i < inventoryList.size(); i++) {
+            if (inventoryList.get(i).getInventoryID() == id) {
+                deletedInventory = inventoryList.get(i);
+                inventoryList.remove(i);
+                return deletedInventory;
+            }
         }
-
-        return null; // Inventory item not found
+        return deletedInventory;
     }
 
-    // Method to delete an inventory item
-    public void deleteInventory(int inventoryID) {
-        Inventory inventoryToRemove = getInventoryById(inventoryID);
-
-        if (inventoryToRemove != null) {
-            inventoryItems.remove(inventoryToRemove);
+    public Inventory editInventory(int id, Inventory updatedInventory) {
+        for (Inventory inventory : inventoryList) {
+            if (inventory.getInventoryID() == id) {
+                if (updatedInventory.getItemName() != null) {
+                    inventory.setItemName(updatedInventory.getItemName());
+                }
+                if (updatedInventory.getQuantity() > 0) {
+                    inventory.setQuantity(updatedInventory.getQuantity());
+                }
+                if (updatedInventory.getUnit() != null) {
+                    inventory.setUnit(updatedInventory.getUnit());
+                }
+                if (updatedInventory.getReorderLevel() > 0) {
+                    inventory.setReorderLevel(updatedInventory.getReorderLevel());
+                }
+                return inventory;
+            }
         }
-    }
-
-    // Method to generate a new unique inventory ID (example implementation)
-    private int generateNewInventoryID() {
-        // Generate a random number or use any other suitable method to generate unique IDs
-        return new Random().nextInt(1000);
+        return new Inventory(0, "", 0, "", 0);
     }
 }
 
