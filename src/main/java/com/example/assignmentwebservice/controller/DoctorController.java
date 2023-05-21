@@ -18,6 +18,9 @@ public class DoctorController {
     public List<Doctor> getAllDoctors(){
         return doctorService.getAllDoctors();
     }
-    
+
+    @PostMapping()
+    public Doctor createDoctor(@RequestBody Doctor doctor) { return  doctorService.addDoctor(doctor); }
+
 }
 
