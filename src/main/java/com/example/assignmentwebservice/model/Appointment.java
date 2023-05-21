@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Appointment {
-    private int appointmentID, doctorId, patientId ;
+    private Integer appointmentID, doctorId, patientId ;
     private String appointmentDate, appointmentTime, reason;
 
 
@@ -25,19 +25,19 @@ public class Appointment {
         this.appointmentID = appointmentID;
     }
 
-    public int getDoctorId() {
+    public Integer getDoctorId() {
         return doctorId;
     }
 
-    public void setDoctorId(int doctorId) {
+    public void setDoctorId(Integer doctorId) {
         this.doctorId = doctorId;
     }
 
-    public int getPatientId() {
+    public Integer getPatientId() {
         return patientId;
     }
 
-    public void setPatientId(int patientId) {
+    public void setPatientId(Integer patientId) {
         this.patientId = patientId;
     }
 
