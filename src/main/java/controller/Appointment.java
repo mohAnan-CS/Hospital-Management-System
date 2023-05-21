@@ -4,25 +4,19 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Appointment {
-    private int appointmentID;
-    private LocalDate appointmentDate;
-    private LocalTime appointmentTime;
-    private String reason;
-    private String status;
+    private int appointmentID, doctorId, patientId ;
+    private String appointmentDate, appointmentTime, reason;
 
 
-    public Appointment() {
-    }
-
-    public Appointment(int appointmentID, LocalDate appointmentDate, LocalTime appointmentTime, String reason, String status) {
+    public Appointment(int appointmentID, int doctorId, int patientId, String appointmentDate, String appointmentTime, String reason) {
         this.appointmentID = appointmentID;
+        this.doctorId = doctorId;
+        this.patientId = patientId;
         this.appointmentDate = appointmentDate;
         this.appointmentTime = appointmentTime;
         this.reason = reason;
-        this.status = status;
     }
 
-    // Getters and Setters
     public int getAppointmentID() {
         return appointmentID;
     }
@@ -31,19 +25,35 @@ public class Appointment {
         this.appointmentID = appointmentID;
     }
 
-    public LocalDate getAppointmentDate() {
+    public int getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(int doctorId) {
+        this.doctorId = doctorId;
+    }
+
+    public int getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(int patientId) {
+        this.patientId = patientId;
+    }
+
+    public String getAppointmentDate() {
         return appointmentDate;
     }
 
-    public void setAppointmentDate(LocalDate appointmentDate) {
+    public void setAppointmentDate(String appointmentDate) {
         this.appointmentDate = appointmentDate;
     }
 
-    public LocalTime getAppointmentTime() {
+    public String getAppointmentTime() {
         return appointmentTime;
     }
 
-    public void setAppointmentTime(LocalTime appointmentTime) {
+    public void setAppointmentTime(String appointmentTime) {
         this.appointmentTime = appointmentTime;
     }
 
@@ -55,12 +65,16 @@ public class Appointment {
         this.reason = reason;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    @Override
+    public String toString() {
+        return "Appointment{" +
+                "appointmentID=" + appointmentID +
+                ", doctorId=" + doctorId +
+                ", patientId=" + patientId +
+                ", appointmentDate='" + appointmentDate + '\'' +
+                ", appointmentTime='" + appointmentTime + '\'' +
+                ", reason='" + reason + '\'' +
+                '}';
     }
 }
 
