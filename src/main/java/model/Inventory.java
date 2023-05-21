@@ -1,4 +1,4 @@
-package controller;
+package model;
 
 public class Inventory {
     private int inventoryID;
@@ -6,10 +6,6 @@ public class Inventory {
     private int quantity;
     private String unit;
     private int reorderLevel;
-
-    // Constructors
-    public Inventory() {
-    }
 
     public Inventory(int inventoryID, String itemName, int quantity, String unit, int reorderLevel) {
         this.inventoryID = inventoryID;
@@ -19,7 +15,6 @@ public class Inventory {
         this.reorderLevel = reorderLevel;
     }
 
-    // Getters and Setters
     public int getInventoryID() {
         return inventoryID;
     }
@@ -59,4 +54,16 @@ public class Inventory {
     public void setReorderLevel(int reorderLevel) {
         this.reorderLevel = reorderLevel;
     }
+
+    @Override
+    public String toString() {
+        return "Inventory{" +
+                "inventoryID=" + inventoryID +
+                ", itemName='" + itemName + '\'' +
+                ", quantity=" + quantity +
+                ", unit='" + unit + '\'' +
+                ", reorderLevel=" + reorderLevel +
+                '}';
+    }
+    
 }

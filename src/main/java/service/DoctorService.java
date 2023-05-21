@@ -1,6 +1,6 @@
 package service;
 
-import controller.Doctor;
+import model.Doctor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

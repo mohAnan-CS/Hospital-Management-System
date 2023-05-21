@@ -1,6 +1,6 @@
 package service;
 
-import controller.Appointment;
+import model.Appointment;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

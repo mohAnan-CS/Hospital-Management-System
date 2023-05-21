@@ -1,6 +1,6 @@
 package service;
 
-import controller.Inventory;
+import model.Inventory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
