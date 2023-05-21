@@ -1,27 +1,21 @@
 package controller;
 
-import java.util.List;
-
 public class Doctor {
+
     private int doctorID;
-    private String name;
-    private String specialization;
-    private String contactInfo;
-    private String schedule;
+    private String name, specialization, phoneNumber;
+    private double salary;
+    private boolean isAvailable;
 
-    // Constructors
-    public Doctor() {
-    }
-
-    public Doctor(int doctorID, String name, String specialization, String contactInfo, String schedule) {
+    public Doctor(int doctorID, String name, String specialization, String phoneNumber, double salary, boolean isAvailable) {
         this.doctorID = doctorID;
         this.name = name;
         this.specialization = specialization;
-        this.contactInfo = contactInfo;
-        this.schedule = schedule;
+        this.phoneNumber = phoneNumber;
+        this.salary = salary;
+        this.isAvailable = isAvailable;
     }
 
-    // Getters and Setters
     public int getDoctorID() {
         return doctorID;
     }
@@ -46,38 +40,40 @@ public class Doctor {
         this.specialization = specialization;
     }
 
-    public String getContactInfo() {
-        return contactInfo;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setContactInfo(String contactInfo) {
-        this.contactInfo = contactInfo;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getSchedule() {
-        return schedule;
+    public double getSalary() {
+        return salary;
     }
 
-    public void setSchedule(String schedule) {
-        this.schedule = schedule;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
-    // Custom Methods
-    public static void addDoctor(List<Doctor> doctorList, Doctor doctor) {
-        doctorList.add(doctor);
+    public boolean isAvailable() {
+        return isAvailable;
     }
 
-    public static void removeDoctor(List<Doctor> doctorList, int doctorID) {
-        Doctor doctorToRemove = null;
-        for (Doctor doctor : doctorList) {
-            if (doctor.getDoctorID() == doctorID) {
-                doctorToRemove = doctor;
-                break;
-            }
-        }
-        if (doctorToRemove != null) {
-            doctorList.remove(doctorToRemove);
-        }
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
+    @Override
+    public String toString() {
+        return "Doctor{" +
+                "doctorID=" + doctorID +
+                ", name='" + name + '\'' +
+                ", specialization='" + specialization + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", salary=" + salary +
+                ", isAvailable=" + isAvailable +
+                '}';
     }
 }
 
