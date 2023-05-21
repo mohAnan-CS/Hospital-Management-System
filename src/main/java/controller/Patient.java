@@ -1,23 +1,18 @@
 package controller;
 
-import java.time.LocalDate;
-
 public class Patient {
+
     private int patientID;
-    private String name;
-    private LocalDate dateOfBirth;
-    private String contactInfo;
-    private String medicalHistory;
+    private String name, dateOfBirth, contactInfo, medicalHistory;
+    private boolean isHealthInsuranceAvailable;
 
-    public Patient() {
-    }
-
-    public Patient(int patientID, String name, LocalDate dateOfBirth, String contactInfo, String medicalHistory) {
+    public Patient(int patientID, String name, String dateOfBirth, String contactInfo, String medicalHistory, boolean isHealthInsuranceAvailable) {
         this.patientID = patientID;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.contactInfo = contactInfo;
         this.medicalHistory = medicalHistory;
+        this.isHealthInsuranceAvailable = isHealthInsuranceAvailable;
     }
 
     public int getPatientID() {
@@ -36,11 +31,11 @@ public class Patient {
         this.name = name;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -58,6 +53,26 @@ public class Patient {
 
     public void setMedicalHistory(String medicalHistory) {
         this.medicalHistory = medicalHistory;
+    }
+
+    public boolean isHealthInsuranceAvailable() {
+        return isHealthInsuranceAvailable;
+    }
+
+    public void setHealthInsuranceAvailable(boolean healthInsuranceAvailable) {
+        isHealthInsuranceAvailable = healthInsuranceAvailable;
+    }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "patientID=" + patientID +
+                ", name='" + name + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", contactInfo='" + contactInfo + '\'' +
+                ", medicalHistory='" + medicalHistory + '\'' +
+                ", isHealthInsuranceAvailable=" + isHealthInsuranceAvailable +
+                '}';
     }
 }
 
