@@ -1,7 +1,6 @@
 package com.example.assignmentwebservice.service;
 
 import com.example.assignmentwebservice.model.Appointment;
-import com.example.assignmentwebservice.model.Doctor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -88,7 +87,7 @@ public class AppointmentService {
 
         }
 
-        return new Appointment(0, 0 , 0, "?", "?", "?");
+        return new Appointment(0, 0, 0, "?", "?", "?");
 
     }
 }
