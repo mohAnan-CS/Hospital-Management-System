@@ -27,5 +27,8 @@ public class DoctorController {
         return doctorService.editDoctor(id, doctor);
     }
 
+    @DeleteMapping("{id}")
+    public Doctor deleteDoctor(@PathVariable("id") Integer id){ return doctorService.deleteDoctor(id); }
+
 }
 

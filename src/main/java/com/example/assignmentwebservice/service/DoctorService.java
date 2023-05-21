@@ -64,5 +64,24 @@ public class DoctorService {
         return new Doctor(0, "?", "?", "?", 0.0, false);
 
     }
+
+    public Doctor deleteDoctor(int id){
+
+        Doctor doctor = new Doctor(0, "?", "?", "?", 0.0, false);
+        for (int i = 0; i < doctorsList.size(); i++) {
+
+            if (doctorsList.get(i).getDoctorID() == id){
+
+                doctor = doctorsList.get(i);
+                doctorsList.remove(doctor);
+                return doctor;
+
+            }
+
+        }
+
+        return doctor;
+
+    }
 }
 
