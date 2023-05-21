@@ -1,6 +1,6 @@
-package service;
+package com.example.assignmentwebservice.service;
 
-import model.Inventory;
+import com.example.assignmentwebservice.model.Inventory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

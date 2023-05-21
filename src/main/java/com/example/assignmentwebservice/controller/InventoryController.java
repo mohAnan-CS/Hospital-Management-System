@@ -1,11 +1,11 @@
-package controller;
+package com.example.assignmentwebservice.controller;
 
-import model.Inventory;
+import com.example.assignmentwebservice.model.Inventory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.InventoryService;
+import com.example.assignmentwebservice.service.InventoryService;
 
 @RestController
 @RequestMapping("/inventory")

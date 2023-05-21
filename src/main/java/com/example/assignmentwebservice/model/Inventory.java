@@ -1,4 +1,4 @@
-package model;
+package com.example.assignmentwebservice.model;
 
 public class Inventory {
     private int inventoryID;
@@ -65,5 +65,5 @@ public class Inventory {
                 ", reorderLevel=" + reorderLevel +
                 '}';
     }
-    
+
 }

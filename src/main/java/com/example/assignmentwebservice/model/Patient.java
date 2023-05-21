@@ -1,4 +1,4 @@
-package model;
+package com.example.assignmentwebservice.model;
 
 public class Patient {
 

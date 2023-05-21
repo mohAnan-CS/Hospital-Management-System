@@ -1,4 +1,4 @@
-package model;
+package com.example.assignmentwebservice.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
