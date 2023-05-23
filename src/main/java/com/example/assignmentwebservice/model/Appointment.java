@@ -1,69 +1,17 @@
 package com.example.assignmentwebservice.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
+
+@Data
+@AllArgsConstructor
 
 public class Appointment {
     private Integer appointmentID, doctorId, patientId ;
     private String appointmentDate, appointmentTime, reason;
-
-
-    public Appointment(int appointmentID, int doctorId, int patientId, String appointmentDate, String appointmentTime, String reason) {
-        this.appointmentID = appointmentID;
-        this.doctorId = doctorId;
-        this.patientId = patientId;
-        this.appointmentDate = appointmentDate;
-        this.appointmentTime = appointmentTime;
-        this.reason = reason;
-    }
-
-    public int getAppointmentID() {
-        return appointmentID;
-    }
-
-    public void setAppointmentID(int appointmentID) {
-        this.appointmentID = appointmentID;
-    }
-
-    public Integer getDoctorId() {
-        return doctorId;
-    }
-
-    public void setDoctorId(Integer doctorId) {
-        this.doctorId = doctorId;
-    }
-
-    public Integer getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(Integer patientId) {
-        this.patientId = patientId;
-    }
-
-    public String getAppointmentDate() {
-        return appointmentDate;
-    }
-
-    public void setAppointmentDate(String appointmentDate) {
-        this.appointmentDate = appointmentDate;
-    }
-
-    public String getAppointmentTime() {
-        return appointmentTime;
-    }
-
-    public void setAppointmentTime(String appointmentTime) {
-        this.appointmentTime = appointmentTime;
-    }
-
-    public String getReason() {
-        return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
 
     @Override
     public String toString() {
